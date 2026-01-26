@@ -5,6 +5,11 @@ from agents.report_generation_agent import report_generation_agent
 from orchestrator.financial_advisor_orchestrator import FinancialAdvisorOrchestrator
 
 def main():
+    """
+    Main entry point for the Agentic Financial Advisor application.
+    Initializes agents, creates an orchestrator, and runs the financial analysis query.
+    """
+    # List of specialized agents for financial analysis
     agents = [
         market_analysis_agent,
         risk_assessment_agent,
@@ -12,8 +17,10 @@ def main():
         report_generation_agent
     ]
 
+    # Create orchestrator to manage agent interactions
     orchestrator = FinancialAdvisorOrchestrator(agents)
 
+    # Run the analysis with a sample query
     orchestrator.run(
         "Analyze current market scenario and suggest "
         "short-term and long-term investments with risk analysis."
